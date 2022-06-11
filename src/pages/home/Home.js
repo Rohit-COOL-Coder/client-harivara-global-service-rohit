@@ -4,6 +4,8 @@ import User from '../../components/User'
 import { setUser } from '../../redux/userReducer'
 import { publicRequest } from '../../requestMethod'
 import './home.scss'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 // import {} from "@reduxjs/toolkit"
 
 // const users=[
@@ -58,21 +60,32 @@ function Home() {
     const dispatch=useDispatch()
     // const [users,setUsers]=useState([])
     const users=useSelector(state=>state.user.users)
+    const [count,setCount]=useState(1)
 
     // console.log(users)
   
     useEffect(()=>{
      const fetchUser= async()=>{
         try{
-            const res=await publicRequest.get('/getAllUser')
+            const res=await publicRequest.get(`/getAllUser?page=${count}&limit=1`)
             // setUsers(res.data)
-            dispatch(setUser(res.data))
+            dispatch(setUser(res.data.results))
         }catch(err){
             console.log(err)
         }
      }
         fetchUser()
-    },[])
+    },[count])
+
+    const handleCount=(type)=>{
+     if(type=="right"){
+         setCount(count+1)
+     }else{
+        count>1 && setCount(count-1)
+     } 
+
+    }
+    console.log(count)
   return (
     <div className='wrapper'>
         <div className='container'>
@@ -88,6 +101,10 @@ function Home() {
                     </tr>
                    {users.map(user=><User key={user._id} user={user}/>)}
                 </table>
+            </div>
+            <div className='pagination'>
+                 <div className="paginationLeft" onClick={(e)=>handleCount("left")}><ArrowBackIcon /> </div>
+                 <div className='paginationRight'   onClick={(e)=>handleCount("right")}><ArrowForwardIcon /> </div>
             </div>
         </div>
     </div>
