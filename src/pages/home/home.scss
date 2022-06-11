@@ -1,0 +1,83 @@
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(41, 52, 98);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   .container{
+    width: 90vw;
+    height: 90vh;
+    box-shadow: -4px 4px 20px -1px rgba(0,0,0,0.75);
+    border-radius: 5px;
+    background-color: rgb(246, 251, 244);
+
+    .tableContainer{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        .table{
+            width: 70em;
+            .tableRow{
+              .tableHead{
+                font-size: 1.5em;
+                padding: 10px 0px;
+                font-weight: 600;
+                opacity: 0.7;
+                color: rgb(6, 40, 61);  
+                
+            }
+              .tabledata{
+                background-color: rgb(219, 223, 253);
+                padding: 10px 0px;
+                .nameConatainer{
+                    display: flex;
+                    justify-content: flex-start;
+                    margin-left: 10px;
+                    align-items: center;
+                      img{
+                      width: 50px;
+                      height: 50px;
+                      object-fit: cover;
+                      border-radius: 50%;  
+                    }
+                    .name{
+                      margin-left: 10px;
+                      color: rgb(36, 47, 155);
+                      font-weight: 500;
+                      opacity: 0.8;
+                      font-size: 20px;
+                    }
+                }
+                span{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 500;
+                    color: rgb(56, 56, 56);
+                }
+                .actionView{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    button{
+                        padding: 7px 25px;
+                        border: none;
+                        background-color: rgb(36, 47, 155);
+                        color: white;
+                        border-radius: 5px;
+                        font-size: 13px;
+                        opacity: 0.7;
+                        cursor: pointer;
+                        transition: all 0.5s ease;
+                        &:hover{
+                            opacity: 1;
+                        }
+                    }
+                }
+              }
+            }
+        }
+    }
+   }
+}

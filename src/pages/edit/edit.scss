@@ -1,0 +1,74 @@
+.editwrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(41, 52, 98);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .editContainer{
+        width: 20em;
+        height: 20em;
+        box-shadow: -4px 4px 20px -1px rgba(0,0,0,0.75);
+        border-radius: 5px;
+        background-color: rgb(246, 251, 244);
+         display: flex;
+         flex-direction: column;
+         justify-content: space-around;
+         align-items: center;
+        .top{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+            span{
+                margin-left: 5px;
+                font-size: 25px;
+                font-weight: 500;
+                color: rgb(41, 52, 98);
+            }
+        }
+        .center{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            input{
+                padding: 10px 30px;
+                font-size: 15px;
+                font-weight: 500;
+                opacity: 0.8;
+                color: rgb(41, 52, 98);
+                border: 1px solid rgb(238, 238, 238);
+                border-radius: 5px;
+                outline: none;
+            }
+            .error{
+                margin-top: 10px;
+                color: rgb(235, 83, 83);
+                font-size: 13px;
+            }
+        }
+        .bottom{
+            button{
+                border: none;
+                background-color: rgb(36, 47, 155);
+                color: white;
+                border-radius: 5px;
+                font-size: 16px;
+                width: 250px;
+                padding: 10px 0px;
+                opacity: 0.9;
+                cursor: pointer;
+                transition: all 0.5s ease;
+                &:hover{
+                    opacity: 1;
+                }
+            }
+        }
+
+    }
+}
